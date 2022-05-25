@@ -4,9 +4,9 @@ import { LoginComponent } from './components/login/login.component';
 import { LogoutComponent } from './components/logout/logout.component'; 
 
 const routes: Routes = [
-  {path: 'login',component:LoginComponent},
-  {path: '', redirectTo:'login', pathMatch: 'full'},
-  {path: 'logout', component:LogoutComponent}
+  { path: 'login', component: LoginComponent },
+  { path: '', redirectTo: 'login', pathMatch: 'full'},
+  { path: 'logout', component: LoginComponent }
 ];
 
 @NgModule({

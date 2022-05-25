@@ -18,25 +18,3 @@
   <div class="container mt-3">
     <router-outlet></router-outlet>
 </div>
-
-<div>
-  <nav class="navbar navbar-expand navbar-dark bg-primary">
-    <div class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a *ngIf="isLoggedIn" routerLink="listBook" class="nav-link">Books List</a>
-      </li>
-      <li class="nav-item">
-        <a *ngIf="isLoggedIn" routerLink="addAuthor" class="nav-link">Add Author</a>
-      </li>
-      <li class="nav-item">
-        <a *ngIf="isLoggedIn" routerLink="addBook" class="nav-link">Add Book</a>
-      </li>
-      <li class="nav-item">
-        <a *ngIf="isLoggedIn" class="nav-link" href="/logout" (click)=handleLogout()>Logout</a>
-      </li>
-    </div>
-  </nav>
-  <div class="container mt-3">
-    <router-outlet></router-outlet>
-</div>
-
