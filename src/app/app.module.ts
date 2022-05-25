@@ -9,7 +9,8 @@ import { HttpInterceptorService } from './services/auth/http-interceptor.service
 import { LogoutComponent } from './components/logout/logout.component';
 
 import { FormsModule } from '@angular/forms';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule
   ],
   providers: [    {
     provide: HTTP_INTERCEPTORS,
