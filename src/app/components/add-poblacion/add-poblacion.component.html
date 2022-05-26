@@ -1,0 +1,58 @@
+<form #myForm="ngForm">
+
+    <div style="width: 400px; margin: auto;">
+        <div class="submit-form">
+          <div *ngIf="!submitted">
+            <div class="form-group">
+              <label for="nombre">Nombre</label>
+              <input
+                type="text"
+                (keypress)="($event.charCode >= 48 && $event.charCode < 58)" 
+                class="form-control"
+                id="nombre"
+                required
+                [(ngModel)]="poblacion.nombre"
+                (focusout)="existsPK(poblacion.nombre)"
+                name="nombre"
+              />
+            </div>
+            
+          
+            <div class="form-group">
+              <label for="caracteristicas">Caracteristicas</label>
+              <input
+                type="text"
+                class="form-control"
+                id="caracteristicas"
+                required
+                [(ngModel)]="poblacion.caracteristicas"
+                name="caracteristicas"
+              />
+            </div>
+      
+            <div class="form-group">
+                <label for="nomada">Nomada</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nomada"
+                  required
+                  [(ngModel)]="poblacion.esNomada"
+                  name="nomada"
+                />
+              </div>
+              
+              <hr>
+
+            <button (click)="savePoblacion()" [disabled]="!myForm.form.valid" class="btn btn-success">Submit</button>
+          </div>
+          
+          <div *ngIf="submitted">
+            <h4>You submitted successfully!</h4>
+            <button class="btn btn-success" (click)="newPoblacion()">Add</button>
+          </div>
+          
+        </div> 
+      </div>
+      {{msgError}}
+    </form>
