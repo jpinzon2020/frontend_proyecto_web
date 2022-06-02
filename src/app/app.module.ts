@@ -3,20 +3,27 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { LoginComponent } from './components/login/login.component';
 import { HttpInterceptorService } from './services/auth/http-interceptor.service';
+import { AppComponent } from './app.component';
+import { AddPoblacionComponent } from './components/add-poblacion/add-poblacion.component'
+import { LoginComponent } from './components/login/login.component';
 import { LogoutComponent } from './components/logout/logout.component';
+import { ListPoblacionComponent } from './components/list-poblacion/list-poblacion.component'; 
 
+import { ListFilterPipe } from './services/listerfilter.service';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    AddPoblacionComponent,
+    ListPoblacionComponent,
+    ListFilterPipe
   ],
   imports: [
     BrowserModule,

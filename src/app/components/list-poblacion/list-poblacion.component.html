@@ -1,0 +1,138 @@
+
+<div class="container">
+    <div class="card">
+      <h3 class="text-center">Poblacion List</h3>
+      <div class="card-body">
+      <div class="form-group form-inline">
+        Search poblacion by name:
+        <input class="form-control ml-2" type="text" name="searchTerm" [(ngModel)]="searchTerm"
+          (input)="search('')" />
+      </div>
+        <table class="table table-striped">
+          <thead>
+            <th>NOMBRE</th>
+            <th>CARACARTESTICAS</th>
+            <th>NOMADA</th>
+            <th></th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of poblacionSet | listFilter: searchTerm ; let i = index " >
+              <td>{{item.nombre}}</td>
+              <td>{{item.caracteristicas}}</td>
+              <td>{{item.esNomada}}</td>
+              <td>
+                <button class="btn btn-info btn-sm"    
+                (click)="triggerModal(modalData, item)">
+                  Edit </button>
+                  &nbsp;
+                <button class='btn btn-danger btn-sm' (click)="deletePoblacion(item.nombre)" >
+                  Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  
+    </div>
+  </div>
+  
+  
+  <ng-template #modalData let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Edit Población</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+    <div class="modal-body">
+  
+      <div style="width: 400px; margin: auto;">
+        <div class="submit-form">
+            <div class="form-group">
+              <label for="name">NOMBRE</label>
+              <input
+                disabled
+                type="text"
+                class="form-control"
+                id="name"
+                required
+                [(ngModel)]="currentPoblacion.nombre"
+                name="name"
+              />
+            </div>
+            <div class="form-group">
+              <label for="caracteristicas">CARACARTESTICAS</label>
+              <input
+                type="text"
+                class="form-control"
+                id="caracteristicas"
+                required
+                [(ngModel)]="currentPoblacion.caracteristicas"
+                name="caracteristicas"
+              />
+            </div>
+
+            <div class="form-group">
+                <label for="nomada">NOMADA</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nomada"
+                  required
+                  [(ngModel)]="currentPoblacion.esNomada"
+                  name="nomada"
+                />
+              </div>
+            
+          </div>
+      </div>
+    
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-success" 
+      
+      (click)="updatePoblacion()"
+      
+      (click)="modal.close('Save click')">Save</button>
+    </div>
+  </ng-template>
+  
+  <hr>
+  
+  <div class="row">
+    <div class="col-md-3">
+      <h4>Poblacion List</h4>
+      <ul class="list-group">
+        <li 
+          class="list-group-item" 
+          *ngFor="let poblacionId of poblacionSet; let i = index" 
+          [class.active]="i == currentIndex"
+          (click)="setActivePoblacion(poblacionId, i)">
+          <div class="col">{{ poblacionId.nombre }}</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  <hr>
+  
+  <div class="card-text">
+    <form #f="ngForm" class="form-inline">
+      <div class="form-group">
+        <label for="isbn">NOMBRE:</label>
+        <input [(ngModel)]="namePoblacion" id="name" name="name" class="form-control ml-2 mr-2">
+      </div>
+      <button (click)="retrievePoblacion(namePoblacion)" [disabled]="!f?.valid" class="btn btn-primary">Search</button>
+    </form>
+      <div class="col-md-6">
+    <div *ngIf="currentPoblacion" >
+      <div>
+        <label><strong>Nombre:</strong></label> {{ currentPoblacion.nombre }}
+        <label><strong>Caracteristicas:</strong></label> {{ currentPoblacion.caracteristicas }}
+        <label><strong>Es nomada:</strong></label> {{ currentPoblacion.esNomada }}
+      </div>
+    </div>
+    <label><strong></strong></label> {{ msgError }}
+  </div>
+  </div>
+  

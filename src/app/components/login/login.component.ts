@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
       this.loginSuccess = true;
       this.apps.isLoggedIn = true
       this.successMessage = 'Login Successful.';
-      this.router.navigate(['/listBook']);
+      this.router.navigate(['/listPoblacion']);
     }, () => {
       this.invalidLogin = true;
       this.loginSuccess = false;
