@@ -13,6 +13,14 @@
       <li class="nav-item">
         <a *ngIf="isLoggedIn" routerLink="listDelito" class="nav-link">Delito List</a>
       </li>
+
+      <li class="nav-item">
+        <a *ngIf="isLoggedIn" routerLink="addGrupoArmado" class="nav-link">Add Grupo armado</a>
+      </li>
+      <li class="nav-item">
+        <a *ngIf="isLoggedIn" routerLink="listDelito" class="nav-link">Grupo armado List</a>
+      </li>
+
       <li class="nav-item">
         <a *ngIf="isLoggedIn" class="nav-link" href="/logout" (click)=handleLogout()>Logout</a>
       </li>

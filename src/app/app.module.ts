@@ -17,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { AddDelitoComponent } from './components/add-delito/add-delito.component';
 import { ListDelitoComponent } from './components/list-delito/list-delito.component';
+import { AddGrupoArmadoComponent } from './components/add-grupo-armado/add-grupo-armado.component';
 
 
 
@@ -30,7 +31,8 @@ import { ListDelitoComponent } from './components/list-delito/list-delito.compon
     ListFilterPipe,
     ResetPasswordComponent,
     AddDelitoComponent,
-    ListDelitoComponent
+    ListDelitoComponent,
+    AddGrupoArmadoComponent
   ],
   imports: [
     BrowserModule,

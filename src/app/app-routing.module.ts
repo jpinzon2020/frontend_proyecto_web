@@ -7,6 +7,7 @@ import { ListPoblacionComponent } from './components/list-poblacion/list-poblaci
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { AddDelitoComponent } from './components/add-delito/add-delito.component';
 import { ListDelitoComponent } from './components/list-delito/list-delito.component';
+import { AddGrupoArmadoComponent } from './components/add-grupo-armado/add-grupo-armado.component';
  
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'listPoblacion', component: ListPoblacionComponent },
   { path: 'reset-password', component: ResetPasswordComponent },
   { path: 'addDelito', component: AddDelitoComponent },
-  { path: 'listDelito', component: ListDelitoComponent }
+  { path: 'listDelito', component: ListDelitoComponent },
+  { path: 'addGrupoArmado', component: AddGrupoArmadoComponent }
 ];
 
 @NgModule({
