@@ -1,0 +1,90 @@
+
+<div class="container">
+    <div class="card">
+      <h3 class="text-center">Delito List</h3>
+      <div class="card-body">
+      <div class="form-group form-inline">
+        Search Delito by name:
+        <input class="form-control ml-2" type="text" name="searchTerm" [(ngModel)]="searchTerm"
+          (input)="search('')" />
+      </div>
+        <table class="table table-striped">
+          <thead>
+            <th>NOMBRE</th>
+            <th></th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of delitoSet | listFilter: searchTerm ; let i = index " >
+              <td>{{item.nombre}}</td>
+              <td>
+                <button class="btn btn-info btn-sm"    
+                (click)="triggerModal(modalData, item)">
+                  Edit </button>
+                  &nbsp;
+                <button class='btn btn-danger btn-sm' (click)="deleteDelito(item.nombre)" >
+                  Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  
+    </div>
+  </div>
+  
+  
+  <ng-template #modalData let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Edit Delito</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+    <div class="modal-body">
+  
+      <div style="width: 400px; margin: auto;">
+        <div class="submit-form">
+            <div class="form-group">
+              <label for="nombre">NOMBRE</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nombre"
+                required
+                [(ngModel)]="currentDelito.nombre"
+                name="nombre"
+              />
+            </div>
+            
+          </div>
+      </div>
+    
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-success" 
+      
+      (click)="updateDelito()"
+      
+      (click)="modal.close('Save click')">Save</button>
+    </div>
+  </ng-template>
+  
+  <hr>
+  
+  <div class="row">
+    <div class="col-md-3">
+      <h4>Poblacion List</h4>
+      <ul class="list-group">
+        <li 
+          class="list-group-item" 
+          *ngFor="let delitoId of delitoSet; let i = index" 
+          [class.active]="i == currentIndex"
+          (click)="setActiveDelito(delitoId, i)">
+          <div class="col">{{ delitoId.nombre }}</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  <hr>
+  

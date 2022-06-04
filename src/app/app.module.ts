@@ -15,6 +15,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { AddDelitoComponent } from './components/add-delito/add-delito.component';
+import { ListDelitoComponent } from './components/list-delito/list-delito.component';
 
 
 
@@ -26,7 +28,9 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
     AddPoblacionComponent,
     ListPoblacionComponent,
     ListFilterPipe,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    AddDelitoComponent,
+    ListDelitoComponent
   ],
   imports: [
     BrowserModule,

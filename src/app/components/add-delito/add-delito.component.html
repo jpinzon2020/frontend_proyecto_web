@@ -1,0 +1,33 @@
+<form #myForm="ngForm">
+
+    <div style="width: 400px; margin: auto;">
+        <div class="submit-form">
+          <div *ngIf="!submitted">
+            <div class="form-group">
+              <label for="nombre">Nombre del nuevo Delito</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nombre"
+                required
+                [(ngModel)]="delito.nombre"
+                (focusout)="existsPK(delito.nombre)"
+                name="nombre"
+              />
+            </div>
+            
+          
+              <hr>
+
+            <button (click)="saveDelito()" [disabled]="!myForm.form.valid" class="btn btn-success">Submit</button>
+          </div>
+          
+          <div *ngIf="submitted">
+            <h4>You submitted successfully!</h4>
+            <button class="btn btn-success" (click)="newDelito()">Add</button>
+          </div>
+          
+        </div> 
+      </div>
+      {{msgError}}
+    </form>
