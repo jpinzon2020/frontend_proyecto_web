@@ -11,9 +11,11 @@ import { LogoutComponent } from './components/logout/logout.component';
 import { ListPoblacionComponent } from './components/list-poblacion/list-poblacion.component'; 
 
 import { ListFilterPipe } from './services/listerfilter.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+
 
 
 @NgModule({
@@ -23,13 +25,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LogoutComponent,
     AddPoblacionComponent,
     ListPoblacionComponent,
-    ListFilterPipe
+    ListFilterPipe,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
     NgbModule,
     BrowserAnimationsModule
   ],
