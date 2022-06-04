@@ -49,15 +49,15 @@
       <div style="width: 400px; margin: auto;">
         <div class="submit-form">
             <div class="form-group">
-              <label for="name">NOMBRE</label>
+              <label for="nombre">NOMBRE</label>
               <input
                 disabled
                 type="text"
                 class="form-control"
-                id="name"
+                id="nombre"
                 required
                 [(ngModel)]="currentPoblacion.nombre"
-                name="name"
+                name="nombre"
               />
             </div>
             <div class="form-group">
@@ -115,24 +115,4 @@
   </div>
   
   <hr>
-  
-  <div class="card-text">
-    <form #f="ngForm" class="form-inline">
-      <div class="form-group">
-        <label for="isbn">NOMBRE:</label>
-        <input [(ngModel)]="namePoblacion" id="name" name="name" class="form-control ml-2 mr-2">
-      </div>
-      <button (click)="retrievePoblacion(namePoblacion)" [disabled]="!f?.valid" class="btn btn-primary">Search</button>
-    </form>
-      <div class="col-md-6">
-    <div *ngIf="currentPoblacion" >
-      <div>
-        <label><strong>Nombre:</strong></label> {{ currentPoblacion.nombre }}
-        <label><strong>Caracteristicas:</strong></label> {{ currentPoblacion.caracteristicas }}
-        <label><strong>Es nomada:</strong></label> {{ currentPoblacion.esNomada }}
-      </div>
-    </div>
-    <label><strong></strong></label> {{ msgError }}
-  </div>
-  </div>
   

@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   successMessage: string;
   invalidLogin = false;
   loginSuccess = false;
-  
+  hidePassword: boolean = true;
 
   constructor(
     private apps : AppComponent,
