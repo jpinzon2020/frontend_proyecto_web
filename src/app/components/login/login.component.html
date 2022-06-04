@@ -15,7 +15,7 @@
             <label for="pwd">Password:</label>
             <input [type]="hidePassword ? 'password' : 'text'" matInput type="password" class="form-control" [(ngModel)]="password" id="password" placeholder="Enter password"
               name="password">
-              <div matSuffix style="opacity: 0.5" (click)="hidePassword = !hidePassword">{{hidePassword ? 'visibility_off' : 'visibility'}}</div>
+              <div matSuffix style="opacity: 0.5" (click)="hidePassword = !hidePassword">{{hidePassword ? 'Mostrar pws' : 'No mostrar pws'}}</div>
           </div>
 
           <div class="form-group text-center pt-2">
