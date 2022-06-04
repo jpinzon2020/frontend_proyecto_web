@@ -17,9 +17,13 @@
               name="password">
               <div matSuffix style="opacity: 0.5" (click)="hidePassword = !hidePassword">{{hidePassword ? 'visibility_off' : 'visibility'}}</div>
           </div>
-          <button (click)=handleLogin() class="btn btn-success">Login</button>
+
+          <div class="form-group text-center pt-2">
+            <button (click)=handleLogin() class="btn btn-success">Login</button>
+          </div>
           
-          <div class="link">
+          <div class="link text-center">
+            <br>
             <a class="link-text" [routerLink]="['/reset-password']">¿Olvidaste tu contraseña?</a><br>
           </div>
 
